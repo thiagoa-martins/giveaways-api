@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js",
-    "dev": "nodemon ./src/server.js",
+    "start": "node ./dist/server.js",
+    "dev": "nodemon ./dist/server.js",
     "build": "npx tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
     "mongoose": "^6.8.3"
   },
   "devDependencies": {
