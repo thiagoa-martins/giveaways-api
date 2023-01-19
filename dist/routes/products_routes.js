@@ -9,4 +9,5 @@ routes.post("/", products_controller_1.default.create);
 routes.get("/", products_controller_1.default.index);
 routes.get("/:id", products_controller_1.default.show);
 routes.put("/:id", products_controller_1.default.update);
+routes.delete("/:id", products_controller_1.default.remove);
 module.exports = routes;

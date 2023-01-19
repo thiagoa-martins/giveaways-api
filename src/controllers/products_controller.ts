@@ -83,4 +83,19 @@ const update = async (req: Request, res: Response) => {
 	});
 };
 
-export = { create, index, show, update };
+const remove = async (req: Request, res: Response) => {
+	const { id } = req.params;
+
+	const product = await productsModel.findById(id);
+
+	await product?.updateOne({
+		deleted_at: new Date(),
+	});
+
+	res.status(200).json({
+		message: "sucess",
+		product,
+	});
+};
+
+export = { create, index, show, update, remove };

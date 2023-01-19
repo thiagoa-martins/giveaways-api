@@ -74,4 +74,15 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         productExists,
     });
 });
-module.exports = { create, index, show, update };
+const remove = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const product = yield products_model_1.default.findById(id);
+    yield (product === null || product === void 0 ? void 0 : product.updateOne({
+        deleted_at: new Date(),
+    }));
+    res.status(200).json({
+        message: "sucess",
+        product,
+    });
+});
+module.exports = { create, index, show, update, remove };
