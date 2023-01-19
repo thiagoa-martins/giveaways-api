@@ -22,7 +22,7 @@ app.use((err: Error, req: Request, res: Response, next: Function) => {
 			status: "error",
 			message: "Internal server error",
 		});
-	}  
+	}
 });
 
 const PORT = process.env.PORT || 3333;

@@ -6,24 +6,24 @@ const create = async (req: Request, res: Response) => {
 	const { name, category, status, quantity } = req.body;
 
 	if (!name || !category || !status || !quantity) {
-    throw new AppError("Nome, categoria, status e quantidade são obrigatórios");
+		throw new AppError("Nome, categoria, status e quantidade são obrigatórios");
 	}
 
 	const productExists = await productsModel.find({ name });
 
 	if (String(productExists)) {
-    throw new AppError("Esse produto já existe!");
+		throw new AppError("Esse produto já existe!");
 	}
 
-  const register = new productsModel({
-	  name,
-	  category,
-	  status,
-	  quantity,
-	  created_at: new Date(),
-	  updated_at: new Date(),
-	  deleted_at: null
-  });
+	const register = new productsModel({
+		name,
+		category,
+		status,
+		quantity,
+		created_at: new Date(),
+		updated_at: new Date(),
+		deleted_at: null,
+	});
 
 	register.save();
 
@@ -37,7 +37,7 @@ const index = async (req: Request, res: Response) => {
 };
 
 const show = async (req: Request, res: Response) => {
-  const { id } = req.params;
+	const { id } = req.params;
 
 	const product = await productsModel.findById(id);
 
@@ -55,13 +55,16 @@ const update = async (req: Request, res: Response) => {
 	const productExists = await productsModel.findById(id);
 
 	if (!String(productExists)) {
-    throw new AppError("Produto não encontrado!");
+		throw new AppError("Produto não encontrado!");
 	}
 
 	const productByName = await productsModel.find({ name });
-	
-	if (String(productByName) && productByName[0]?._id.valueOf() !== productExists?._id.valueOf()) {
-    throw new AppError("Este nome já está em uso.");
+
+	if (
+		String(productByName) &&
+		productByName[0]?._id.valueOf() !== productExists?._id.valueOf()
+	) {
+		throw new AppError("Este nome já está em uso.");
 	}
 
 	name = name ?? productExists?.name;
@@ -69,13 +72,13 @@ const update = async (req: Request, res: Response) => {
 	status = status ?? productExists?.status;
 	quantity = quantity ?? productExists?.quantity;
 
-  await productExists?.updateOne({
-	  name,
-	  category,
-	  status,
-	  quantity,
-	  updated_at: new Date()
-  });
+	await productExists?.updateOne({
+		name,
+		category,
+		status,
+		quantity,
+		updated_at: new Date(),
+	});
 
 	res.status(200).send({
 		message: "sucess",

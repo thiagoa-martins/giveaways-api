@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const connect = () => {
-  mongoose.set("strictQuery", false);
+	mongoose.set("strictQuery", false);
 
-  mongoose.connect("mongodb://localhost:27017/givaways");
+	mongoose.connect("mongodb://localhost:27017/givaways");
 
 	const db = mongoose.connection;
 

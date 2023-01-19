@@ -29,7 +29,7 @@ const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         quantity,
         created_at: new Date(),
         updated_at: new Date(),
-        deleted_at: null
+        deleted_at: null,
     });
     register.save();
     res.status(201).json();
@@ -55,7 +55,8 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         throw new AppError_1.default("Produto não encontrado!");
     }
     const productByName = yield products_model_1.default.find({ name });
-    if (String(productByName) && ((_a = productByName[0]) === null || _a === void 0 ? void 0 : _a._id.valueOf()) !== (productExists === null || productExists === void 0 ? void 0 : productExists._id.valueOf())) {
+    if (String(productByName) &&
+        ((_a = productByName[0]) === null || _a === void 0 ? void 0 : _a._id.valueOf()) !== (productExists === null || productExists === void 0 ? void 0 : productExists._id.valueOf())) {
         throw new AppError_1.default("Este nome já está em uso.");
     }
     name = name !== null && name !== void 0 ? name : productExists === null || productExists === void 0 ? void 0 : productExists.name;
@@ -67,7 +68,7 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         category,
         status,
         quantity,
-        updated_at: new Date()
+        updated_at: new Date(),
     }));
     res.status(200).send({
         message: "sucess",
