@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const products_model_1 = __importDefault(require("../models/products_model"));
 const AppError_1 = __importDefault(require("../utils/AppError"));
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -86,4 +87,4 @@ const remove = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         product,
     });
 });
-module.exports = { create, index, show, update, remove };
+exports.default = { create, index, show, update, remove };

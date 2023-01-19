@@ -2,6 +2,7 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const connect = () => {
     mongoose_1.default.set("strictQuery", false);
@@ -10,4 +11,4 @@ const connect = () => {
     db.once("open", () => console.log("Connected to database!"));
     db.on("error", () => console.error.bind(console, "Connection error: "));
 };
-module.exports = { connect };
+exports.default = { connect };

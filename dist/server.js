@@ -18,11 +18,11 @@ app.use((err, req, res, next) => {
             status: "error",
             message: err.message,
         });
-        return res.status(500).json({
-            status: "error",
-            message: "Internal server error",
-        });
     }
+    return res.status(500).json({
+        status: "error",
+        message: "Internal server error",
+    });
 });
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => console.log("Server listening on PORT: ", PORT));

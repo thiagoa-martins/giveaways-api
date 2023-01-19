@@ -5,4 +5,4 @@ const routes = Router();
 
 routes.use("/", productsRoutes);
 
-export = routes;
+export default routes;
