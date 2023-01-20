@@ -20,8 +20,7 @@ biblioteca ou framework de preferência.
 
 ### Links
 
-- URL do repositório: [Código](https://github.com/thiagoa-martins/givaways-api)
-- Acesse o site: [Site](https://jcltest.netlify.app/)
+- URL do repositório: [Código](https://github.com/thiagoa-martins/giveaways-api)
 
 ### Como rodar o projeto
 
