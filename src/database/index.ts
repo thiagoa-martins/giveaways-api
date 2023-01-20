@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 
-const connect = () => {
+const connect = async () => {
   mongoose.set("strictQuery", false);
+  
+  const MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost:27017/giveaways";
 
-  mongoose.connect(`mongodb://${process.env.MONGO_URI}/giveaways`);
+  mongoose.connect(MONGODB_URI);
 
   const db = mongoose.connection;
 
