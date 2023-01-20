@@ -27,7 +27,7 @@ biblioteca ou framework de preferência.
 - `npm i` para instalar as dependências
 - Tenha o MongoDB instalado na máquina e inicie o serviço com `mongod`
 - `npm start` para rodar o projeto
-- Acesse a url disponibilizada
+- Acesse a url disponibilizada com a rotas de `products` ou `counties`
 
 ## Autor
 
