@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const connect = () => {
   mongoose.set("strictQuery", false);
 
-  mongoose.connect("mongodb://localhost:27017/givaways");
+  mongoose.connect(`${process.env.MONGO_URI}/giveaways`);
 
   const db = mongoose.connection;
 
