@@ -1,4 +1,4 @@
-# Giveaways API
+# Givaways API
 
 O teste consiste no desenvolvimento de um CRUD de uma WEB API, para o
 gerenciamento de uma loja entregando os endpoints para realizar listagem, cadastro,
