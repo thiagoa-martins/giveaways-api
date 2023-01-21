@@ -24,7 +24,7 @@ biblioteca ou framework de preferência.
 
 ### Como rodar o projeto
 
-- Use essa versão do NODE: 16.19.0 LTS
+- Use essa versão do NodeJS: 16.19.0 LTS
 - `npm i` para instalar as dependências
 - Tenha o MongoDB instalado na máquina e inicie o serviço com `mongod`
 - `npm start` para rodar o projeto
