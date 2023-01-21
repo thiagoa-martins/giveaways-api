@@ -29,7 +29,7 @@ biblioteca ou framework de preferência.
 - Tenha o MongoDB instalado na máquina e inicie o serviço com `mongod`
 - `npm start` para rodar o projeto
 - Acesse a url disponibilizada com uma das rotas: `products` ou `counties`
-- Passe um id por parâmetro para consultar um produto ou município específico
+- Passe um `id` por parâmetro para consultar um produto ou município específico
 - A rota de `counties` consulta municípios do Rio de Janeiro, utilizando a API do IBGE 
 
 ## Autor
