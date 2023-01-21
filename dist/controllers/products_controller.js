@@ -37,7 +37,7 @@ const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 const index = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const products = yield products_model_1.default.find();
-    res.json(products);
+    return res.json(products);
 });
 const show = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
@@ -45,7 +45,7 @@ const show = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!String(product)) {
         throw new AppError_1.default("Produto não encontrado");
     }
-    res.json(product);
+    return res.json(product);
 });
 const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;

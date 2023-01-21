@@ -33,7 +33,7 @@ const create = async (req: Request, res: Response) => {
 const index = async (req: Request, res: Response) => {
   const products = await productsModel.find();
 
-  res.json(products);
+  return res.json(products);
 };
 
 const show = async (req: Request, res: Response) => {
@@ -45,7 +45,7 @@ const show = async (req: Request, res: Response) => {
     throw new AppError("Produto não encontrado");
   }
 
-  res.json(product);
+  return res.json(product);
 };
 
 const update = async (req: Request, res: Response) => {
